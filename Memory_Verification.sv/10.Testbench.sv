@@ -3,6 +3,7 @@
 
 module mem_tb;
   inter vinf();
+ // test tst(vinf);
   
   mem uut(
     .clk(vinf.clk),
@@ -12,10 +13,7 @@ module mem_tb;
     .rd_d(vinf.rd_d)
   );
   
-  initial begin
   
-  forever #5 vinf.clk = ~vinf.clk;
-  end
  
   initial begin
     $dumpfile("dump.vcd");
@@ -23,6 +21,11 @@ module mem_tb;
     vinf.clk = 0;
     #100;
     $finish;
+  end
+  
+  initial begin
+  
+  forever #5 vinf.clk = ~vinf.clk;
   end
   test tst(vinf);
 endmodule
