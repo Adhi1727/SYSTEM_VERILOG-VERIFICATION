@@ -9,10 +9,11 @@ class monitor;
   endfunction
   
   task mon();
-    trans = new();
+    
     repeat (10) begin
       @(posedge vinf.clk);
       #1;
+      trans = new();
       trans.r_w = vinf.r_w;
       trans.addr = vinf.addr;
       trans.wr_d = vinf.wr_d;
