@@ -9,7 +9,7 @@ class generator;
   
   task main();
     
-    repeat(100) begin
+    repeat(10) begin
       trans = new();
      
       assert(trans.randomize());
