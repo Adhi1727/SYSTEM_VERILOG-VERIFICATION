@@ -8,8 +8,10 @@ class generator;
   endfunction
   
   task main();
-    trans = new();
-    repeat(10) begin
+    
+    repeat(100) begin
+      trans = new();
+     
       assert(trans.randomize());
       g2d.put(trans);
       $display("Generator is Ready");
